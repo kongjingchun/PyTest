@@ -9,3 +9,4 @@ for i in range(1, 10):
         print('{} * {} = {}'.format(j, i, i * j), end=' ')
         j += 1
     print()
+print('配置测试')
