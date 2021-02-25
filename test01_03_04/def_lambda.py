@@ -19,9 +19,9 @@ print(y(2, 3))
 方法中调用匿名函数
 """
 users = [
-    {'name':'xiaoqian'},
-    {'name':'wangye'},
-    {'name':'kongjingchun'}
+    {'name': 'xiaoqian'},
+    {'name': 'wangye'},
+    {'name': 'kongjingchun'}
 ]
-users.sort(key = lambda x:x['name'])
+users.sort(key=lambda x: x['name'])
 print(users)
