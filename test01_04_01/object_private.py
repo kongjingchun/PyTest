@@ -12,8 +12,10 @@ class Cat(object):
 
     def run(self):
         print(self.__run())
+
     def __run(self):
         return f'{self.name}在开心的跑着'
+
 
 cat = Cat('小猫咪咪')
 cat.run()
