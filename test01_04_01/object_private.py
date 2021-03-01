@@ -17,5 +17,5 @@ class Cat(object):
         return f'{self.name}在开心的跑着'
 
 
-cat = Cat('小猫咪咪')
+cat = Cat('小猫咪')
 cat.run()
