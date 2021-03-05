@@ -17,14 +17,14 @@ class Test(object):
 
     @staticmethod
     def sleep():
-        print( 'sleep')
+        print('sleep')
 
     @property
     def name(self):
         return self._name
 
     @name.setter
-    def name(self,value):
+    def name(self, value):
         self._name = value
 
 
@@ -34,4 +34,3 @@ Test.sleep()
 print(a.name)
 a.name = 'kkk'
 print(a.name)
-
