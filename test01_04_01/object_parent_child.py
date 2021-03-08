@@ -1,7 +1,7 @@
 # coding:utf-8
 # @Create time: 2021/3/5 5:49 下午
 # @Author: KongJingchun
-# @remark:
+# @remark: 类的继承
 
 class Parent(object):
     def __init__(self, name, sex):
