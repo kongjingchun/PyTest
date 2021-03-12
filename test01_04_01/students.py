@@ -32,9 +32,9 @@ class StudentInfo(object):
         else:
             print('不存在该学生')
 
-    def adds(self, **students):
+    def adds(self, students):
         for student in students:
-            message = self.check(student)
+            message = self.check(**student)
             if message != True:
                 print(message)
             else:
@@ -55,7 +55,6 @@ class StudentInfo(object):
             'sex': student['sex'],
             'class_name': student['class_name']
         }
-        self.get_all()
 
     def update(self, **kwargs):
         if kwargs['id'] not in self.students:
@@ -120,3 +119,4 @@ if __name__ == '__main__':
         {'name': '批量添加2', 'age': 2, 'sex': 'boy', 'class_name': '批量测试'}
     ]
     student_info.adds(users)
+    student_info.get_all()
