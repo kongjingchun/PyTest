@@ -32,19 +32,30 @@ class StudentInfo(object):
         else:
             print('不存在该学生')
 
-    def add_student(self, **kwargs):
-        message = self.check(**kwargs)
+    def adds(self, **students):
+        for student in students:
+            message = self.check(student)
+            if message != True:
+                print(message)
+            else:
+                self.__add(student)
+
+    def add_student(self, **student):
+        message = self.check(**student)
         if message != True:
             print(message)
         else:
-            id = max(self.students) + 1
-            self.students[id] = {
-                'name': kwargs['name'],
-                'age': kwargs['age'],
-                'sex': kwargs['sex'],
-                'class_name': kwargs['class_name']
-            }
-            self.get_all()
+            self.__add(student)
+
+    def __add(self, student):
+        id = max(self.students) + 1
+        self.students[id] = {
+            'name': student['name'],
+            'age': student['age'],
+            'sex': student['sex'],
+            'class_name': student['class_name']
+        }
+        self.get_all()
 
     def update(self, **kwargs):
         if kwargs['id'] not in self.students:
@@ -104,3 +115,8 @@ if __name__ == '__main__':
     student_info.add_student(name='曹雅杰', age=27, sex='girl', class_name='家庭主妇')
     student_info.delete(6)
     student_info.update(id=1, name='kjc', age=27, sex='boy', class_name='开发测试')
+    users = [
+        {'name': '批量添加1', 'age': 1, 'sex': 'boy', 'class_name': '批量测试'},
+        {'name': '批量添加2', 'age': 2, 'sex': 'boy', 'class_name': '批量测试'}
+    ]
+    student_info.adds(users)
