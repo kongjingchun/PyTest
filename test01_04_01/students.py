@@ -1,7 +1,7 @@
 # coding:utf-8
 # @Create time: 2021/2/25 4:51 下午
 # @Author: KongJingchun
-# @remark:实现学生信息库
+# @remark:实现学生信息库面向对象并增加批量功能
 
 class StudentInfo(object):
     def __init__(self, students):
