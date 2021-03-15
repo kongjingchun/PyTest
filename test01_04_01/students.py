@@ -8,6 +8,7 @@ class StudentInfo(object):
         self.students = students
 
     def get_all(self):
+        print(len(students))
         for key, value in self.students.items():
             print(
                 '学号：{}、姓名：{}、年龄：{}、性别：{}、工作：{}'.format(key, value['name'], value['age'], value['sex'],
@@ -39,6 +40,10 @@ class StudentInfo(object):
                 print(message)
             else:
                 self.__add(student)
+
+    def deletes(self, ids):
+        for id_ in ids:
+            self.delete(id_)
 
     def add_student(self, **student):
         message = self.check(**student)
@@ -73,6 +78,42 @@ class StudentInfo(object):
             print('已更改学生信息为：学号：{}、姓名：{}、年龄：{}、性别：{}、工作：{}'.format(kwargs['id'], kwargs['name'], kwargs['age'],
                                                                   kwargs['sex'],
                                                                   kwargs['class_name']))
+
+    def updates(self, update_students):
+        for student in update_students:
+            id_ = list(student.keys())[0]
+            if id_ not in self.students:
+                print('ID: {} 不存在'.format(id_))
+                continue
+            user_info = student.get(id_)
+            message = self.check(**user_info)
+            if message != True:
+                print(message)
+                continue
+            self.students[id_] = user_info
+            print('所有信息更新完成')
+
+    def find_user(self, **kwargs):
+        values = list(students.values())
+        key = None
+        value = None
+        result = []
+        if 'name' in kwargs:
+            key = 'name'
+            value = kwargs[key]
+        elif 'sex' in kwargs:
+            key = 'sex'
+            value = kwargs[key]
+        elif 'class_name' in kwargs:
+            key = 'class_name'
+            value = kwargs
+        else:
+            print('没有发现可搜索的关键字')
+            return
+        for user in values:
+            if value in user[key]:
+                result.append(user)
+        return result
 
 
 if __name__ == '__main__':
@@ -120,3 +161,11 @@ if __name__ == '__main__':
     ]
     student_info.adds(users)
     student_info.get_all()
+    student_info.deletes([1, 2])
+    student_info.updates([
+        {60: {'name': '批量添加10', "age": 10, 'sex': "boy1", 'class_name': '批量修改1'}},
+        {7: {'name': '批量添加20', "age": 20, 'sex': "boy2", 'class_name': '批量修改2'}},
+    ])
+    student_info.get_all()
+    st = student_info.find_user(name='倩')
+    print(st)
