@@ -10,6 +10,8 @@ def upper(str_date):
     except Exception as e:
         print('程序报错了')
         print(e)
+    finally:
+        print('这是finally语法内容')
     return new_str
 
 
