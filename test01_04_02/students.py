@@ -1,7 +1,7 @@
 # coding:utf-8
 # @Create time: 2021/2/25 4:51 下午
 # @Author: KongJingchun
-# @remark:实现学生信息库面向对象并增加批量功能
+# @remark:实现对异常的捕获
 
 class NotAgeError(Exception):
     def __init__(self, message):
@@ -41,10 +41,10 @@ class StudentInfo(object):
         if not isinstance(class_name_value, str):
             raise TypeError('请输入正确的姓名')
 
-    def delete(self, id):
-        if id in self.students:
-            user = self.students.pop(id)
-            print('已删除学号为{}的学生，姓名：{}、年龄：{}、性别：{}、工作：{}'.format(id, user["name"], user["age"], user["sex"],
+    def delete(self, user_id):
+        if user_id in self.students:
+            user = self.students.pop(user_id)
+            print('已删除学号为{}的学生，姓名：{}、年龄：{}、性别：{}、工作：{}'.format(user_id, user["name"], user["age"], user["sex"],
                                                                user["class_name"]))
         else:
             print('不存在该学生')
@@ -71,8 +71,8 @@ class StudentInfo(object):
             self.__add(student)
 
     def __add(self, student):
-        id = max(self.students) + 1
-        self.students[id] = {
+        user_id = max(self.students) + 1
+        self.students[user_id] = {
             'name': student['name'],
             'age': student['age'],
             'sex': student['sex'],
@@ -128,7 +128,6 @@ class StudentInfo(object):
             value = kwargs
         else:
             raise NotAgeError('没有发先可搜索的关键字')
-            return
         for user in values:
             if value in user[key]:
                 result.append(user)
