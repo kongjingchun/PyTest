@@ -17,3 +17,21 @@ print(now_date, type(now_date))
 date_str = '2018 03 15'
 date = datetime.strptime(date_str, '%Y %m %d')
 print(date)
+
+# 课后习题
+# 定义now_变量接收当前日期时间
+now = datetime.now()
+# 计算当前日期时间3天6小时12分钟之前的日期时间
+now_before = now - timedelta(days=3, hours=6, minutes=12)
+# 计算当前日期时间10天之后的日期时间
+now_after = now + timedelta(days=10)
+print('--------------------------------')
+print(now_before)
+print(now_after)
+
+# 获取时间戳
+a = datetime.timestamp(datetime.now())
+print(a)
+# 时间戳转换为时间格式
+b = datetime.fromtimestamp(a)
+print(b)
