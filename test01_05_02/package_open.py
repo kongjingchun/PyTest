@@ -21,7 +21,7 @@ class Open(object):
         self.mode = mode
 
     def write(self, message):
-        f = open(self.path, 'w')
+        f = open(self.path, 'w', encoding='utf-8')
         try:
             if self.is_return:
                 message = '%s\n' % message
@@ -33,7 +33,7 @@ class Open(object):
 
     def read(self, is_strip=True):
         _date = []
-        with open(self.path, mode=self.mode) as f:
+        with open(self.path, mode=self.mode, encoding='utf-8') as f:
             date = f.readlines()
         for i in date:
             if i != '':
