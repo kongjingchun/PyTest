@@ -8,3 +8,4 @@ types:
 Python:
   web:django
   spader:bs5
+  auto:Page Object
