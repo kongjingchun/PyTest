@@ -8,7 +8,7 @@ import yaml
 
 def read(path):
     with open(path, 'r', encoding='utf-8') as f:
-        result = f.read()
+        _result = f.read()
     return yaml.load(result, Loader=yaml.FullLoader)
 
 
