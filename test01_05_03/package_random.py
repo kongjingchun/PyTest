@@ -9,7 +9,7 @@ import random
 print(random.random())
 # 返回a～b区间的随机浮点数
 print(random.uniform(1, 10))
-# 返回a～b区间的一个随机整数
+# 返回a～b区间的一个随机整数,不包含10
 print(random.randint(1, 10))
 # 返回一个对象中的随机元素
 print(random.choice('abc'))
@@ -22,3 +22,6 @@ print(random.sample('abcdef', 2))
 print(random.randrange(0, 10, 2))
 # 上面方法类似
 print(random.choice(range(0, 10, 2)))
+
+print('________________________')
+print(random.randint(1, 2))
