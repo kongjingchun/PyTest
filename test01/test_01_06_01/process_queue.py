@@ -42,7 +42,7 @@ if __name__ == '__main__':
     send = multiprocessing.Process(target=work.send, args=({'name': '孔敬淳'},))
     send_all = multiprocessing.Process(target=work.send_all)
     rece = multiprocessing.Process(target=work.receive)
-    # 启动队列
+    # 启动进程
     send_all.start()
     send.start()
     rece.start()
@@ -50,5 +50,6 @@ if __name__ == '__main__':
     send_all.join()
     # 结束进程
     rece.terminate()  # 并不会立即关闭进程，有个等着操作系统去关闭这个进程的时间
-    # time.sleep(3)
+    time.sleep(3)
     print(rece.is_alive())
+

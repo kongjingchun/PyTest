@@ -2,9 +2,11 @@
 # @Create time: 2021/3/24 7:29 下午
 # @Author: KongJingchun
 # @remark:多线程
+
 import time
 import random
 import threading
+
 lists = ['孔敬淳', '卢晓倩', '王野', '祁晓喆']
 new_lists = []
 
