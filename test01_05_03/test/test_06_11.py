@@ -21,7 +21,7 @@ class Game(object):
             exit('您输入的区间起始值大于区间终止值')
 
         self.correct_number = random.randint(self.min, self.max)
-        print('所产生的随机数字区间为{},随机数为{}'.format([self.min, self.max], self.correct_number))
+        print('所产生的随机数字区间为{}'.format([self.min, self.max]))
 
     def guess(self, number):
         if any([number > self.max, number < self.min]):
