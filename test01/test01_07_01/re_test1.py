@@ -58,18 +58,35 @@ if __name__ == '__main__':
     print(len(data))
     print(real_len(data))
 
-
-
     data1 = 'Hello,my name is 是 XiaoMu,i am 33'
     # 匹配数字
     print(re.findall('\d', data1))
     # 匹配英文
     print(re.findall('\D', data1))
+    # 匹配字符活数字
+    print(re.findall('\w', data1))
     # 匹配空格及符号
     print(re.findall('\W', data1))
     # 从开始匹配字符串
     print(re.findall('\AHello', data1))
+    print(re.findall('^Hello', data1))
     # 从结尾匹配字符串
     print(re.findall('33\Z', data1))
+    print(re.findall('33$', data1))
     # 去除空格
     print(re.findall('\S', data1))
+    # 获取一个字符
+    print(re.findall('.', data1))
+    # 匹配0次或多次数字及字符
+    print(re.findall('\w*', data1))
+    # 匹配1次或多次数字和字符
+    print(re.findall('\w+', data1))
+    # 匹配固定3次数字和字符
+    print(re.findall('\w{3}', data1))
+    # 匹配2～5次数字和字符
+    print(re.findall('\w{2,5}', data1))
+    # 过滤掉字符集中的字符
+    print(re.findall('[^o]', data1))
+    # 获取组
+    print(re.search('Hello,my name is 是 (.*),i am 33', data1).groups())
+    print(re.search('Hello,my name is 是 (.*),i am (.*)', data1).group(2))
