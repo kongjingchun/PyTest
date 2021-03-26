@@ -20,4 +20,4 @@ def work(i):
 if __name__ == '__main__':
     t_loop = ThreadPoolExecutor(2)
     for i in range(20):
-        t_loop.submit(work, (i,))
+        t_loop.submit(work, i)
