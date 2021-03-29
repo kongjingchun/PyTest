@@ -54,7 +54,6 @@ if __name__ == '__main__':
     print(result)
     result = endswith('33', data)
     print(result)
-    print('_______________________')
     print(len(data))
     print(real_len(data))
 
@@ -63,7 +62,7 @@ if __name__ == '__main__':
     print(re.findall('\d', data1))
     # 匹配英文
     print(re.findall('\D', data1))
-    # 匹配字符活数字
+    # 匹配字符数字
     print(re.findall('\w', data1))
     # 匹配空格及符号
     print(re.findall('\W', data1))
@@ -73,6 +72,7 @@ if __name__ == '__main__':
     # 从结尾匹配字符串
     print(re.findall('33\Z', data1))
     print(re.findall('33$', data1))
+    print('_______________________')
     # 去除空格
     print(re.findall('\S', data1))
     # 获取一个字符
