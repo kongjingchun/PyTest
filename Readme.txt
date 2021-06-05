@@ -15,5 +15,9 @@
 1.6.1           进程与线程编程
                         (进程\进程池的方法、线程\线程池的方法)
 1.7         正则表达式与综合项目实战
-1.7.1       Python正则表达式
-1.7.2       抽奖系统项目(gift)
+1.7.1           Python正则表达式
+1.7.2           抽奖系统项目(gift)
+2.10        Python与MYSQL的交互
+2.10.1      MYSQL的综合应用 (https://shimo.im/docs/tvqpdjy3JGDhVTVp/ 《SQL语句》，可复制链接后用石墨文档 App 或小程序打开)
+2.10.2      MySQL与Python交互
+                (连接数据库、SQL注入、预防SQL注入、异常处理、开启事务、连接池、循环执行SQL语句)
